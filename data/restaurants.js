@@ -1,27 +1,53 @@
 // data/restaurants.js
-// 처음엔 직접 입력한 JSON 데이터로 시작 (나중에 DB 연결)
 export const restaurants = [
   {
     id: 1,
     name: "을지로 노가리 골목",
-    category: "🍺 맥줏집",
-    address: "서울 중구 을지로",
-    lat: 37.5665,   // 위도 (pandas DataFrame의 컬럼처럼)
-    lng: 126.9780,  // 경도
+    category: "맥줏집",
+    address: "서울 중구 을지로3가",
+    lat: 37.5665,
+    lng: 126.9918,
     rating: 4.5,
-    image: "/images/nogari.jpg",
-    description: "을지로 대표 안주 골목"
+    description: "을지로 대표 야장 골목. 저렴한 노가리 안주와 맥주로 유명합니다.",
   },
   {
     id: 2,
     name: "광장시장 빈대떡",
-    category: "🥞 한식",
-    address: "서울 종로구 창경궁로",
+    category: "한식",
+    address: "서울 종로구 창경궁로 88",
     lat: 37.5698,
     lng: 126.9996,
     rating: 4.8,
-    image: "/images/bindaetteok.jpg",
-    description: "100년 전통 시장 맛집"
-  }
-  // ... 계속 추가
+    description: "100년 전통 광장시장의 녹두빈대떡. 바삭하고 고소합니다.",
+  },
+  {
+    id: 3,
+    name: "명동교자",
+    category: "한식",
+    address: "서울 중구 명동10길 29",
+    lat: 37.5634,
+    lng: 126.9850,
+    rating: 4.7,
+    description: "칼국수와 만두로 유명한 명동 대표 맛집. 항상 웨이팅이 있습니다.",
+  },
+  {
+    id: 4,
+    name: "이태원 경리단길 카페거리",
+    category: "카페",
+    address: "서울 용산구 회나무로",
+    lat: 37.5340,
+    lng: 126.9946,
+    rating: 4.3,
+    description: "이국적인 분위기의 카페와 레스토랑이 즐비한 거리.",
+  },
+  {
+    id: 5,
+    name: "통인시장 도시락카페",
+    category: "한식",
+    address: "서울 종로구 자하문로15길 18",
+    lat: 37.5790,
+    lng: 126.9684,
+    rating: 4.6,
+    description: "엽전으로 원하는 반찬을 골라담는 독특한 도시락 체험 카페.",
+  },
 ];
