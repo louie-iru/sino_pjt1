@@ -1,5 +1,7 @@
-// components/NaverMap.js
+// components/NaverMap.tsx
 "use client";
+
+declare const naver: any;
 
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
