@@ -1,4 +1,3 @@
-// components/NaverMap.tsx
 "use client";
 
 declare const naver: any;
@@ -9,21 +8,19 @@ import { restaurants } from "@/data/restaurants";
 import RestaurantCard from "./RestaurantCard";
 
 export default function NaverMap() {
-  const mapRef = useRef(null);
-  const [selected, setSelected] = useState(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = useState<any>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
     if (!mapLoaded) return;
 
-    // 지도 초기화 (서울 중심)
     const map = new naver.maps.Map(mapRef.current, {
       center: new naver.maps.LatLng(37.5665, 126.9780),
       zoom: 13,
     });
 
-    // 맛집 마커 생성
-    restaurants.forEach((restaurant) => {
+    restaurants.forEach((restaurant: any) => {
       const marker = new naver.maps.Marker({
         position: new naver.maps.LatLng(restaurant.lat, restaurant.lng),
         map: map,
@@ -49,7 +46,6 @@ export default function NaverMap() {
         },
       });
 
-      // 마커 클릭 → 팝업 표시
       naver.maps.Event.addListener(marker, "click", () => {
         setSelected(restaurant);
       });
@@ -58,18 +54,12 @@ export default function NaverMap() {
 
   return (
     <div className="relative w-full h-screen">
-
-      {/* 네이버 지도 SDK 로드 */}
       <Script
         src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`}
         onLoad={() => setMapLoaded(true)}
         strategy="afterInteractive"
       />
-
-      {/* 지도 영역 */}
       <div ref={mapRef} className="w-full h-full" />
-
-      {/* 맛집 팝업 카드 */}
       {selected && (
         <RestaurantCard
           restaurant={selected}
